@@ -8,6 +8,7 @@ use lazy_static::lazy_static;
 pub mod problem_001;
 pub mod problem_002;
 pub mod problem_003;
+pub mod problem_004;
 
 /// A type alias for a boxed function returning a `String`, allowing for dynamic dispatch.
 type SolveFn = Box<dyn Fn() -> String + Send + Sync>;
@@ -28,6 +29,7 @@ lazy_static! {
     (1, to_string_wrapper(problem_001::solve)),
     (2, to_string_wrapper(problem_002::solve)),
     (3, to_string_wrapper(problem_003::solve)),
+    (4, to_string_wrapper(problem_004::solve)),
   ]);
 }
 
