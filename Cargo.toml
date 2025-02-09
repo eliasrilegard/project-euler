@@ -1,0 +1,9 @@
+[package]
+name = "project-euler"
+authors = ["Elias Rilegård <e_rilegard@live.se>"]
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"] }
+lazy_static = "1.5"
