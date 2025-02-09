@@ -9,3 +9,8 @@ fn problem_001() {
 fn problem_002() {
   assert_eq!(problem_002::solve(), 4_613_732);
 }
+
+#[test]
+fn problem_003() {
+  assert_eq!(problem_003::solve(), 6857);
+}

@@ -1,5 +1,6 @@
 use clap::{Parser, Subcommand};
 
+mod math;
 pub mod problems;
 
 /// My collection of solved Project Euler problems
