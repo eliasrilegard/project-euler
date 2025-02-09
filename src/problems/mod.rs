@@ -6,6 +6,7 @@ use std::collections::BTreeMap;
 use lazy_static::lazy_static;
 
 pub mod problem_001;
+pub mod problem_002;
 
 /// A type alias for a boxed function returning a `String`, allowing for dynamic dispatch.
 type SolveFn = Box<dyn Fn() -> String + Send + Sync>;
@@ -24,6 +25,7 @@ lazy_static! {
   /// A lazily initiated map storing problem solvers, indexed by problem number.
   static ref SOLVERS: BTreeMap<usize, SolveFn> = BTreeMap::from([
     (1, to_string_wrapper(problem_001::solve)),
+    (2, to_string_wrapper(problem_002::solve)),
   ]);
 }
 
