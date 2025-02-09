@@ -7,3 +7,10 @@ edition = "2021"
 [dependencies]
 clap = { version = "4.4", features = ["derive"] }
 lazy_static = "1.5"
+
+[[bench]]
+name = "benchmark"
+harness = false
+
+[dev-dependencies]
+criterion = "0.5"
