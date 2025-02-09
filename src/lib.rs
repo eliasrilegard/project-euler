@@ -1,6 +1,6 @@
 use clap::{Parser, Subcommand};
 
-mod problems;
+pub mod problems;
 
 /// My collection of solved Project Euler problems
 #[derive(Parser)]
