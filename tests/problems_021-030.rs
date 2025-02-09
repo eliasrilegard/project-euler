@@ -19,3 +19,8 @@ fn problem_023() {
 fn problem_024() {
   assert_eq!(problem_024::solve(), "2783915460");
 }
+
+#[test]
+fn problem_025() {
+  assert_eq!(problem_025::solve(), 4782);
+}
