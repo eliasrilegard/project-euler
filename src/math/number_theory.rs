@@ -1,3 +1,19 @@
+/// Computes the greatest common divisor between a and b.
+/// The greatest common divisor is the largest positive integer dividing both and and b.
+pub fn gcd(a: u32, b: u32) -> u32 {
+  if b == 0 {
+    a
+  } else {
+    gcd(b, a % b)
+  }
+}
+
+/// Computes the least common multiple of a and b.
+/// The least common multiple is the smallest integer that is a multiple of both a and b.
+pub fn lcm(a: u32, b: u32) -> u32 {
+  a * (b / gcd(a, b)) // Prevent overflow by dividing first
+}
+
 /// Compute all prime factors of a number. The resulting list is ordered in ascending order.
 pub fn prime_factors(n: u64) -> Vec<u64> {
   let mut factors = Vec::new();
