@@ -8,23 +8,22 @@ pub fn solve() -> u32 {
   const LIMIT: usize = 28_123;
 
   let sums_of_divisors = divisors_sums(LIMIT);
-  let abundant_numbers: Vec<usize> = (1..=LIMIT)
-    .filter(|&n| sums_of_divisors[n] > n)
-    .collect();
+  let abundant_numbers: Vec<usize> = (1..=LIMIT).filter(|&n| sums_of_divisors[n] > n).collect();
 
   // Mark all numbers which can be written as the sum of two abundant numbers
   let mut is_sum_of_abundants = vec![false; LIMIT + 1];
   for (i, &a) in abundant_numbers.iter().enumerate() {
-    for &b in &abundant_numbers[i..] { // Avoid duplicate checks by starting b at a
+    for &b in &abundant_numbers[i..] {
+      // Avoid duplicate checks by starting b at a
       let sum = a + b;
-      if sum > LIMIT { break; }
+      if sum > LIMIT {
+        break;
+      }
       is_sum_of_abundants[sum] = true;
     }
   }
 
-  (1..LIMIT)
-    .filter(|&n| !is_sum_of_abundants[n])
-    .sum::<usize>() as u32
+  (1..LIMIT).filter(|&n| !is_sum_of_abundants[n]).sum::<usize>() as u32
 }
 
 // Compute the sums of divisors for every number in a sieve-like fashion.

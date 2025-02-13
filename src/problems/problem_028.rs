@@ -15,10 +15,7 @@
 /// Given the sum of all four corners in a layer, we can just sum them up across layers. The
 /// formula doesn't hold for `n = 1`, so we can just compensate and add that at the end.
 pub fn solve() -> u32 {
-  let sum: u32 = (3..=1001)
-    .step_by(2)
-    .map(|n| 4 * n * n - 6 * (n - 1))
-    .sum();
+  let sum: u32 = (3..=1001).step_by(2).map(|n| 4 * n * n - 6 * (n - 1)).sum();
 
   1 + sum
 }

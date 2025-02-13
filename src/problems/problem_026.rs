@@ -4,9 +4,7 @@
 /// Solve this problem by simulating long division. At every step, keep track of seen remainders,
 /// as soon as a remainder repeats we know we have a cycle.
 pub fn solve() -> u32 {
-  (2..1000)
-    .max_by_key(|&d| cycle_length(d))
-    .unwrap()
+  (2..1000).max_by_key(|&d| cycle_length(d)).unwrap()
 }
 
 /// Long division simulation computing the length of the cycle corresponding to the reciprocal of a
