@@ -8,11 +8,11 @@ use crate::math::number_theory::sieve_of_eratosthenes;
 ///
 /// Observations:
 /// - The expression starts with `n = 0`, meaning `0^2 + 0a + b` must be prime, and therefore b
-/// must itself be prime.
+///   must itself be prime.
 /// - For `n = 1`, we have `1 + a + b`, which should (ideally) be prime. We can therefore filter
-/// out cases where it's not.
+///   out cases where it's not.
 /// - The maximum value of the polynomial will be `1000^2 + 2*1000 + 1000 = 2_001_000` This value
-/// comfortably fits in an `i32`.
+///   comfortably fits in an `i32`.
 ///
 /// Start by precomputing all relevant primes. This allows for O(1) lookup later on. Iterate
 /// through all possible (and relevant) combinations of `a` and `b`, keeping track of the product

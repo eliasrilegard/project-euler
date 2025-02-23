@@ -4,7 +4,7 @@
 /// the property that the sum of the divisors of `sum` is equal to the original number.
 pub fn solve() -> u32 {
   const LIMIT: u32 = 10_000;
-  let divisor_sums: Vec<u32> = (0..LIMIT).map(|n| sum_of_divisors(n)).collect();
+  let divisor_sums: Vec<u32> = (0..LIMIT).map(sum_of_divisors).collect();
 
   (1..LIMIT)
     .filter(|&n| {

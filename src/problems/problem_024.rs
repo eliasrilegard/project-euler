@@ -12,7 +12,7 @@ pub fn solve() -> String {
   let mut result = String::new();
 
   // Precompute the factorials of 0 to 9
-  let mut factorials = vec![1; 10];
+  let mut factorials = [1; 10];
   for i in 1..10 {
     factorials[i] = factorials[i - 1] * i as u32;
   }

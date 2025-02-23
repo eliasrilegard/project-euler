@@ -9,7 +9,7 @@
 /// Observations:
 /// - The top right corner is always a perfect square (assuming n is odd and only odd).
 /// - The other three corners are evenly spaced from each other and the top right corner. The top
-/// left corner can be computed as `n^2 - (n - 1)`, the bottom left as `n^2 - (n - 1) * 2`, etc.
+///   left corner can be computed as `n^2 - (n - 1)`, the bottom left as `n^2 - (n - 1) * 2`, etc.
 /// - The sum of all four corners can therefore be expressed as `4n^2 - 6(n - 1)`.
 ///
 /// Given the sum of all four corners in a layer, we can just sum them up across layers. The
