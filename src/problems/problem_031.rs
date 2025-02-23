@@ -4,11 +4,9 @@
 /// This problem is well suited for a dynamic programming solution. There's only one way to make 0p,
 /// i.e. by using nothing. For every coin, update the number of ways to form every sum (above said
 /// coin value) by adding on the number of ways to form the sum of (coin) value less:
-/// ```
-/// ways[i] := ways[i] + ways[i - coin]
-/// ```
-/// Meaning the number of ways to make the sum `i` is the number of ways to make `i` *without*
-/// using the current coin, plus all the ways of making `i - coin` and then adding on the coin.
+/// `ways[i] := ways[i] + ways[i - coin]`, meaning the number of ways to make the sum `i` is the
+/// number of ways to make `i` *without* using the current coin, plus all the ways of making
+/// `i - coin` and then adding on the coin.
 pub fn solve() -> u32 {
   let target = 200;
   let coins = [1, 2, 5, 10, 20, 50, 100, 200];
