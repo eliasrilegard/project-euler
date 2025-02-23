@@ -142,7 +142,8 @@ pub fn solve_all() {
     let result = problem_solver();
     println!("Problem {:>width$}: {}", problem_number, result, width = padding_width);
   }
-}"#
+}
+"#
 }
 
 fn benchmark_rs_start() -> &'static str {
@@ -159,5 +160,6 @@ fn benchmark_rs_end() -> &'static str {
   r#"}
 
 criterion_group!(benches, run_benchmark);
-criterion_main!(benches);"#
+criterion_main!(benches);
+"#
 }
