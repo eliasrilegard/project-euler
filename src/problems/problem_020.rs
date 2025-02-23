@@ -8,5 +8,9 @@ pub fn solve() -> u32 {
 
   let factorial: BigUint = (1..=n).map(BigUint::from).product();
 
-  factorial.to_string().chars().map(|c| c.to_digit(10).unwrap()).sum()
+  factorial
+    .to_string()
+    .chars()
+    .map(|c| c.to_digit(10).unwrap())
+    .sum()
 }

@@ -6,7 +6,10 @@ use std::fs;
 pub fn solve() -> u32 {
   let input = fs::read_to_string("resources/0022_names.txt").unwrap_or_default();
 
-  let mut names: Vec<&str> = input.split(",").map(|name| name.trim_matches('"')).collect();
+  let mut names: Vec<&str> = input
+    .split(",")
+    .map(|name| name.trim_matches('"'))
+    .collect();
   names.sort_unstable();
 
   names

@@ -23,7 +23,9 @@ pub fn solve() -> u32 {
     }
   }
 
-  (1..LIMIT).filter(|&n| !is_sum_of_abundants[n]).sum::<usize>() as u32
+  (1..LIMIT)
+    .filter(|&n| !is_sum_of_abundants[n])
+    .sum::<usize>() as u32
 }
 
 // Compute the sums of divisors for every number in a sieve-like fashion.

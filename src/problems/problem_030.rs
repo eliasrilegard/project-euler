@@ -9,7 +9,11 @@ pub fn solve() -> u32 {
 
   (10..=limit)
     .filter(|&n| {
-      let sum_of_5th_powers: u32 = n.to_string().chars().map(|c| c.to_digit(10).unwrap().pow(5)).sum();
+      let sum_of_5th_powers: u32 = n
+        .to_string()
+        .chars()
+        .map(|c| c.to_digit(10).unwrap().pow(5))
+        .sum();
       sum_of_5th_powers == n
     })
     .sum()

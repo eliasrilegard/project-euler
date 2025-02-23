@@ -35,7 +35,12 @@ fn parse_grid(grid: &str) -> Vec<Vec<u32>> {
   grid
     .trim()
     .lines()
-    .map(|line| line.split_whitespace().map(|num| num.parse::<u32>().unwrap()).collect())
+    .map(|line| {
+      line
+        .split_whitespace()
+        .map(|num| num.parse::<u32>().unwrap())
+        .collect()
+    })
     .collect()
 }
 

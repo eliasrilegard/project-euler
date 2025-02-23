@@ -15,7 +15,10 @@ fn largest_product_in_series(digits: &str, window_size: usize) -> u64 {
   for i in 0..=digits.len() - window_size {
     let window = &digits[i..i + window_size];
 
-    let product: u64 = window.chars().map(|c| c.to_digit(10).unwrap() as u64).product();
+    let product: u64 = window
+      .chars()
+      .map(|c| c.to_digit(10).unwrap() as u64)
+      .product();
 
     if product > max_product {
       max_product = product;
