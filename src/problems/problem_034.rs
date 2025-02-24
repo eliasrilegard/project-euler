@@ -5,9 +5,7 @@
 /// satisfying this equation is `n = 7`. Once the limit is determined, it's a simple process of
 /// filtering. The helpher function is optimized to not use string casting, which is slow.
 pub fn solve() -> u32 {
-  let factorials: Vec<u32> = (0..=9)
-    .map(|n| (1..=n).product::<u32>())
-    .collect();
+  let factorials: Vec<u32> = (0..=9).map(|n| (1..=n).product()).collect();
 
   let limit = 7 * factorials[9];
   (10..=limit)
