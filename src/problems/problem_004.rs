@@ -14,7 +14,7 @@ pub fn solve() -> u32 {
       if product <= maximum {
         break;
       }
-      if is_palindrome(product) {
+      if is_palindrome(product, 10) {
         maximum = product;
       }
     }
