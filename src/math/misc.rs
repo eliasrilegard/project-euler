@@ -15,3 +15,15 @@ where
 
   reversed == original
 }
+
+/// Test whether an input is pandigital, i.e. contains (only) all digits between 1 and 9.
+pub fn is_pandigital(input: &str) -> bool {
+  if input.len() != 9 || input.contains("0") {
+    return false;
+  }
+
+  let mut digits: Vec<char> = input.chars().collect();
+  digits.sort_unstable();
+  digits == ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+}
+

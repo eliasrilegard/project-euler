@@ -1,7 +1,9 @@
 use std::collections::HashSet;
 
+use crate::math::misc::is_pandigital;
+
 /// Find the sum of all products whose multiplicand/multiplier/product identity can be written as a
-/// 1 through 9 pantidital. Hint: Some products can be obtained in more than one way so be sure to
+/// 1 through 9 pandigital. Hint: Some products can be obtained in more than one way so be sure to
 /// only include it once in your sum.
 ///
 /// There core of the algorithm is a brute-force search through all possible procuts `a * b = c`
@@ -19,7 +21,7 @@ pub fn solve() -> u32 {
   for a in 1..10 {
     for b in 1000..10_000 {
       let c = a * b;
-      if c < 10_000 && is_pandigital(a, b, c) {
+      if c < 10_000 && is_pandigital(&format!("{a}{b}{c}")) {
         products.insert(c);
       }
     }
@@ -29,22 +31,11 @@ pub fn solve() -> u32 {
   for a in 10..100 {
     for b in 100..1000 {
       let c = a * b;
-      if c < 10_000 && is_pandigital(a, b, c) {
+      if c < 10_000 && is_pandigital(&format!("{a}{b}{c}")) {
         products.insert(c);
       }
     }
   }
 
   products.iter().sum()
-}
-
-fn is_pandigital(a: u32, b: u32, c: u32) -> bool {
-  let mut digits: Vec<char> = format!("{a}{b}{c}").chars().collect();
-
-  if digits.len() != 9 || digits.contains(&'0') {
-    return false;
-  }
-
-  digits.sort_unstable();
-  digits == ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 }
