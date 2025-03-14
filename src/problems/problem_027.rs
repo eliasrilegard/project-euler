@@ -23,7 +23,7 @@ use crate::math::number_theory::sieve_of_eratosthenes;
 /// generated is `4961`, meaning a sieve limit of `5000` is ultimately sufficient.
 pub fn solve() -> i32 {
   let limit = 1000;
-  let primes: HashSet<i32> = sieve_of_eratosthenes((2 * limit * limit + limit) as usize)
+  let primes: HashSet<i32> = sieve_of_eratosthenes((2 * limit * limit + limit) as u32)
     .iter()
     .map(|&p| p as i32)
     .collect();

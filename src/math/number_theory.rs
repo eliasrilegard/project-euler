@@ -15,7 +15,7 @@ pub fn lcm(a: u32, b: u32) -> u32 {
 }
 
 /// Simple function to determine whether a number is prime or not.
-pub fn is_prime(n: u64) -> bool {
+pub fn is_prime(n: u32) -> bool {
   if n < 2 {
     return false;
   }
@@ -39,14 +39,15 @@ pub fn is_prime(n: u64) -> bool {
 
 /// The Sieve of Eratosthenes efficiently generates all primes up to a given upper bound.
 /// Time complexity `O(n log log n)`.
-pub fn sieve_of_eratosthenes(limit: usize) -> Vec<u64> {
+pub fn sieve_of_eratosthenes(max: u32) -> Vec<u32> {
+  let limit = max as usize;
   let mut primes = vec![true; limit + 1];
   let mut result = Vec::new();
 
   let sqrt_limit = (limit as f64).sqrt() as usize;
   for n in 2..=sqrt_limit {
     if primes[n] {
-      result.push(n as u64);
+      result.push(n as u32);
       let mut multiple = n * n;
       while multiple <= limit {
         primes[multiple] = false;
@@ -59,7 +60,7 @@ pub fn sieve_of_eratosthenes(limit: usize) -> Vec<u64> {
   #[allow(clippy::needless_range_loop)] // Speed
   for n in sqrt_limit + 1..limit {
     if primes[n] {
-      result.push(n as u64);
+      result.push(n as u32);
     }
   }
 

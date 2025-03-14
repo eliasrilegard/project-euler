@@ -8,8 +8,8 @@ use crate::math::number_theory::{is_prime, sieve_of_eratosthenes};
 /// primes up to a given upper bound. Using the prime number theorem, we can estimate the nth prime
 /// as `n * ln(n)`, which for `n = 10001` gives `92110`. Sieving up to `110_000` gives us some
 /// margin.
-pub fn solve() -> u64 {
-  const LIMIT: usize = 110_000;
+pub fn solve() -> u32 {
+  const LIMIT: u32 = 110_000;
   let primes = sieve_of_eratosthenes(LIMIT);
   primes[10_000] // Zero-indexed
 
@@ -17,7 +17,7 @@ pub fn solve() -> u64 {
 }
 
 #[allow(dead_code)]
-fn nth_prime(n: usize) -> u64 {
+fn nth_prime(n: usize) -> u32 {
   let mut count = 0;
   let mut candidate = 0;
   while count < n {

@@ -17,7 +17,7 @@ pub fn solve() -> u32 {
     for permutation in permutations.sorted_unstable().rev() {
       let digits: String = permutation.iter().map(|&&c| c).collect();
       let num: u32 = digits.parse().unwrap();
-      if is_prime(num as u64) {
+      if is_prime(num) {
         return num;
       }
     }
