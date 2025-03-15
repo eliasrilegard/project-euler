@@ -29,3 +29,8 @@ fn problem_045() {
 fn problem_046() {
   assert_eq!(problem_046::solve(), 5777);
 }
+
+#[test]
+fn problem_047() {
+  assert_eq!(problem_047::solve(), 134_043);
+}
