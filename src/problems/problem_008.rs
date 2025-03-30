@@ -9,7 +9,7 @@ pub fn solve() -> u64 {
   INPUT
     .as_bytes()
     .windows(13)
-    .map(|window| window.iter().map(|c| (c - '0' as u8) as u64).product())
+    .map(|window| window.iter().map(|c| (c - b'0') as u64).product())
     .max()
     .unwrap()
 }

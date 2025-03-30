@@ -4,7 +4,7 @@ use crate::math::number_theory::sieve_of_eratosthenes;
 
 /// What 12-digit number do you form by concatenating the three terms in the other arithmetic
 /// sequence of primes having their digits permuted?
-/// 
+///
 /// Given all possible primes, we can group them by their (sorted) digits and try build an
 /// arithmetic sequence. As the problem describes there are exactly two solutions with the first
 /// one being known, we can filter out that case.
@@ -29,7 +29,7 @@ pub fn solve() -> u64 {
     for (i, &a) in group.iter().enumerate() {
       for &b in &group[(i + 1)..] {
         let c = 2 * b - a; // Enforce arithmetic sequence
-        
+
         // Filter out the other case
         if group.contains(&c) && a != 1487 {
           return a as u64 * 100_000_000 + b as u64 * 10_000 + c as u64;

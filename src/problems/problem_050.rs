@@ -14,19 +14,19 @@ pub fn solve() -> u32 {
 
   let mut max_length = 0;
   let mut max_prime = 0;
-  
+
   // Try using `primes[i..j]` as the summation range
   for start in 0..primes.len() {
     let mut sum = 0;
-    for end in start..primes.len() {
-      sum += primes[end];
-    
+    for (end_point, prime) in primes.iter().enumerate().skip(start) {
+      sum += prime;
+
       if sum > limit {
         break;
       }
 
-      if end - start > max_length && prime_set.contains(&sum) {
-        max_length = end - start;
+      if end_point - start > max_length && prime_set.contains(&sum) {
+        max_length = end_point - start;
         max_prime = sum;
       }
     }
