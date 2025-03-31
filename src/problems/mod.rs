@@ -55,6 +55,7 @@ pub mod problem_047;
 pub mod problem_048;
 pub mod problem_049;
 pub mod problem_050;
+pub mod problem_051;
 
 /// A type alias for a boxed function returning a `String`, allowing for dynamic dispatch.
 type SolveFn = Box<dyn Fn() -> String + Send + Sync>;
@@ -122,6 +123,7 @@ lazy_static! {
     (48, to_string_wrapper(problem_048::solve)),
     (49, to_string_wrapper(problem_049::solve)),
     (50, to_string_wrapper(problem_050::solve)),
+    (51, to_string_wrapper(problem_051::solve)),
   ]);
 }
 

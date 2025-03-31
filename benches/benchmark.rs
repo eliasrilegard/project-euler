@@ -55,6 +55,7 @@ pub fn run_benchmark(c: &mut Criterion) {
   c.bench_function("problem_048", |b| b.iter(|| black_box(problem_048::solve())));
   c.bench_function("problem_049", |b| b.iter(|| black_box(problem_049::solve())));
   c.bench_function("problem_050", |b| b.iter(|| black_box(problem_050::solve())));
+  c.bench_function("problem_051", |b| b.iter(|| black_box(problem_051::solve())));
 }
 
 criterion_group!(benches, run_benchmark);
